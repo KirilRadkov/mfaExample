@@ -1,0 +1,33 @@
+server:
+    port : 8081
+spring:
+    application:
+        name: MFAService
+    docker:
+        compose:
+            enabled: true
+            file: docker-compose.yml
+    datasource:
+        username: root
+        password:
+    liquibase:
+        enabled: true
+        change-log: classpath:/com.example.mfaservice.changelog.xml
+        user: root
+        password:
+        contexts: local
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: mfanexoexample@gmail.com
+        password: ENC(IDVVUAhW+7bUoVrz4JVQjvt+3wOBiXLxWWfrvkw05h98C1S14OqzYdaL4S0cbNy+p1WIVcc9v807JR/svHkY8Q==)
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
+
+crypting:
+    cipher-secret: ENC(22gillRIVj4jI3eEzeFDOh+aPJ3TwaD+NfaF4/ZB1JSlJap5uV6iznM8kPYhY+zZFSeJbKXQR4mH0zelKwnTUg==)
+    cipher-salt: ENC(YkMWUlttFtXWLggy5tqmuFQt9N9hnwTGCVz7Dhg6Pt/Kn1zJxBU4BDnq7qy6wV04phC7SmutCshB3NHQRw9YBg==)
