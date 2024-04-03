@@ -16,7 +16,7 @@ class EmailSenderServiceTest extends Specification {
         def message = new SimpleMailMessage();
         message.setFrom("mfaNexoExample@gmail.com");
         message.setTo(toEmail);
-        message.setSubject("Verification Code to verify your Email");
+        message.setSubject("Verification Code");
         message.setText(body);
 
         when:
